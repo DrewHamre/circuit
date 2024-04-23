@@ -73,8 +73,7 @@ public class CircuitBoard {
 		}
 
 		//TODO: parse the given file to populate the char[][]
-
-
+		
 		// throw FileNotFoundException if Scanner cannot read the file
 		// throw InvalidFileFormatException if any issues are encountered while parsing the file
 
