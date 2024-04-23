@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * a GUI according to options specified via command-line arguments.
  * 
  * @author mvail
+ * @author Drew Hamre
  */
 public class CircuitTracer {
 

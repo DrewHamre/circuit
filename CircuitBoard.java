@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Represents a 2D circuit board as read from an input file.
  *  
  * @author mvail
+ * @author Drew Hamre
  */
 public class CircuitBoard {
 	/** current contents of the board */
@@ -43,16 +44,44 @@ public class CircuitBoard {
 	 * @throws InvalidFileFormatException for any file formatting or content issue
 	 */
 	public CircuitBoard(String filename) throws FileNotFoundException {
+		try {
 		Scanner fileScan = new Scanner(new File(filename));
-		
+		String line = fileScan.next();
+		Scanner lineScan = new Scanner(line);
+
+		ROWS = lineScan.nextInt();
+		COLS = lineScan.nextInt();
+		lineScan.close();
+
+		char[][] board = new char[ROWS][COLS]; // Board dimensions
+
+		for (int row = 0; row < ROWS; row++) { // Populate the board
+			line = fileScan.nextLine();
+			lineScan = new Scanner(line);
+			for (int col = 0; col < COLS; col++) {
+				char currentChar = board[row][col];
+				int[] charTypes = new int[currentChar];
+			} lineScan.close();
+		} fileScan.close();
+
+		if (board.contains(T)) {
+			throw new InvalidFileFormatException(filename + "must not contain any 'T' characters.");
+		}
+
+		if (!charTypes.contains(1) || !charTypes.contains(2)) {
+			throw new InvalidFileFormatException(filename + "must contain a starting point (1) and ending point (2)");
+		}
+
 		//TODO: parse the given file to populate the char[][]
+
+
 		// throw FileNotFoundException if Scanner cannot read the file
 		// throw InvalidFileFormatException if any issues are encountered while parsing the file
-		
-		ROWS = 0; //replace with initialization statements using values from file
-		COLS = 0;
-		
-		fileScan.close();
+
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Unable to open " + filename);
+		}
 	}
 	
 	/** Copy constructor - duplicates original board
