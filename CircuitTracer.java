@@ -21,10 +21,14 @@ public class CircuitTracer {
 	 */
 	public static void main(String[] args) {
 		new CircuitTracer(args); //create this with args
+		String type = args[0];
+		String outputType = args[1];
+		String filename = args[2];
 	}
 
 	/** Print instructions for running CircuitTracer from the command line. */
 	private void printUsage() {
+
 		//TODO: print out clear usage instructions when there are problems with
 		// any command line args
 	}
