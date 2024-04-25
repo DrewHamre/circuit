@@ -4,7 +4,7 @@
 * 04/26/2024
 * Drew Hamre
 ****************
- 
+
 3x3 6x6 12x12
 1   1x          
 n   2x
@@ -25,13 +25,22 @@ queues are FIFOs" answer.)
 Is the total number of search states (possible paths) 
 affected by the choice of stack or queue?
 
+    No, the choice of stack or queue is irrelevant. While a stack and a queue
+    may differ in their tactics to find those paths, the circuit board will
+    always have the same amount of possible paths regardless of which storage
+    structure is utilized. 
 
 Is using one of the storage structures likely to find
 a solution in fewer steps than the other? Always?
 
+    Yes, but it is dependant of the situation. Sometimes a stack will be
+    more efficient, but other times a queue may be more efficient. It's 
+    simply case-by-case, one is not objectively "better" than the other. 
 
 Does using either of the storage structures guarantee 
 that the first solution found will be a shortest path?
+
+
 
 
 How is memory use (the maximum number of states in Storage
@@ -40,12 +49,24 @@ at one time) affected by the choice of underlying structure?
 
 What is the Big-Oh runtime order for the search algorithm?
 
+    I couldn't imagine that it would be any less than exponential O(2^n).
+    My logic for thinking this is because if you were to double the size of 
+    the board, ex. a 2x2 -> 4x4 -> 8x8, the runtime would grow exponential 
+    given that n takes into account the number of spaces, paths, etc... 
+    When we went over the towers of hanoi game during a lecture, the runtime 
+    rose extremely fast with every disk added; I believe that rate of growth
+    is very similar to what would happen with every extra row & column you
+    add to the circuit board. 
 
 What does the order reflect? (Maximum size of Storage? Number of
 board positions? Number of paths explored? Maximum path length? 
 Something else?)
 
 
+
+
 What is 'n', the single primary input factor that increases 
 the difficulty of the task?
 
+    I believe n would be all the tasks it must preform to find all possible
+    solutions combined.
