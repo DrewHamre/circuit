@@ -3,7 +3,18 @@
 * CS 221
 * 04/26/2024
 * Drew Hamre
-**************** 
+****************
+ 
+3x3 6x6 12x12
+1   1x          
+n   2x
+n^2 4x
+2^n           <----YES
+
+n = number of spaces, number of paths created, etc...
+x^n
+x = 2.4^n = average of 2.4 places to move 
+
 
 How does the choice of Storage configuration (stack vs queue)
 affect the sequence in which paths are explored in the search 
